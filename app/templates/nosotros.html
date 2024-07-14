@@ -1,0 +1,40 @@
+{% include 'defaults/head.html' %}
+
+<body>
+
+    {% include 'defaults/header.html' %}
+
+    <section class="seccion-equipo">
+        <h2>Conoce a Nuestro Equipo</h2>
+        {% for item in nosotros_list %}
+        <div class="integrante-info">
+            <img src="{{url_for('static', filename=item.imagen)}}" alt="{{item.nombre}}">
+            <h3>{{item.nombre}}</h3>
+            <p>{{item.resumen}}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="seccion-frase">
+        <div class="frase-contenedor">
+            <h2>"La cocina es el corazón del hogar."</h2>
+        </div>
+    </section>
+
+    <section class="seccion-resenias">
+        <div class="contenedor-resenias">
+            {% for item in resenias_list %}
+            <div class="resenia">
+                <h3>{{item[1]}}</h3>
+                <p>{{item[3]}}</p>
+                <div class="estrellas">{{'*'*item[5]}}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% include 'defaults/footer.html' %}
+    <!-- {% include 'defaults/scriptsjs.html' %} -->
+    
+</body>
+</html>
