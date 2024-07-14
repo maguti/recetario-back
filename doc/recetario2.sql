@@ -1,8 +1,8 @@
-CREATE DATABASE IF NOT EXISTS `recetario` CHARACTER SET utf8mb4;
+-- CREATE DATABASE IF NOT EXISTS `recetario` CHARACTER SET utf8mb4;
 -- /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ 
 -- /*!80016 DEFAULT ENCRYPTION='N' */
 
-USE recetario;
+-- USE recetario;
 
 CREATE TABLE IF NOT EXISTS `contactos` (
   `idcontacto` int NOT NULL AUTO_INCREMENT,
@@ -119,10 +119,10 @@ INSERT INTO ingredientes VALUES(57,4,14,"4 tazas de leche");
 INSERT INTO ingredientes VALUES(58,4,15,"Sal, pimienta y nuez moscada a gusto");
 
 -- SELECTS
-SELECT * FROM contactos;
+-- SELECT * FROM contactos;
 
-SELECT * FROM recetario.recetas;
+-- SELECT * FROM recetario.recetas;
 
-SELECT * FROM recetario.ingredientes where idreceta=4 ORDER BY idreceta,orden;
+-- SELECT * FROM recetario.ingredientes where idreceta=4 ORDER BY idreceta,orden;
 
-SELECT r.*,i.orden,i.ingrediente FROM recetas r,ingredientes i where r.idreceta=i.idreceta order by idreceta,orden;
+-- SELECT r.*,i.orden,i.ingrediente FROM recetas r,ingredientes i where r.idreceta=i.idreceta order by idreceta,orden;
