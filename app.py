@@ -18,7 +18,6 @@ def cargarRecetas():
 @app.route("/nosotros/")
 def cargarNosotros():
     resenias_list = getContactosResenias()
-    print(resenias_list)
     return render_template("nosotros.html", unMenu=unMenu, nosotros_list=nosotros_list, resenias_list=resenias_list)
 
 @app.route("/contacto/")

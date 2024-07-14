@@ -15,7 +15,7 @@ def conectarMySQL():
     # deploy -> Pythonanywhere
     host="maguti.mysql.pythonanywhere-services.com"
     user="maguti"
-    clave="codo2024"
+    password="codo2024"
     db="maguti$recetario"
 
     return pymysql.connect(host=host,user=user,password=password,database=db)
