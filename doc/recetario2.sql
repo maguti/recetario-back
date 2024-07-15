@@ -118,6 +118,8 @@ INSERT INTO ingredientes VALUES(56,4,13,"4 cucharadas de harina");
 INSERT INTO ingredientes VALUES(57,4,14,"4 tazas de leche");
 INSERT INTO ingredientes VALUES(58,4,15,"Sal, pimienta y nuez moscada a gusto");
 
+COMMIT;
+
 -- SELECTS
 -- SELECT * FROM contactos;
 
