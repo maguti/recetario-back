@@ -30,5 +30,28 @@ def new_contacto():
     email = request.form['txtEmail']
     mensaje = request.form['txtMensaje']
     newContacto(nombre=nombre, email=email, mensaje=mensaje)
-    return redirect("/")
+    return redirect("/contacto")
 
+@app.route('/listar_contacto')
+def listar_contacto():
+    contactos=getContactos()
+    return render_template("new_contacto.html", unMenu=unMenu, contactos=contactos)
+
+@app.route('/modificar/<int:id>')
+def modificar(id):
+    contacto=getContactoById(id)
+    return render_template("modificar.html", contacto=contacto)
+
+@app.route('/modify_contacto', methods=['POST'])
+def modify_contacto():
+    id = request.form['id']
+    nombre = request.form['txtNombre']
+    email = request.form['txtEmail']
+    mensaje = request.form['txtMensaje']
+    updContactoById(idcontacto=id, nombre=nombre, email=email, mensaje=mensaje)
+    return redirect("/listar_contacto")
+
+@app.route('/borrar_contacto/<int:id>')
+def borrar_contacto(id):
+    delContactoById(id=id)
+    return redirect("/listar_contacto")
