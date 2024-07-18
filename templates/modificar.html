@@ -10,21 +10,21 @@
 
     <section class="formulario">
         <h2 class="titulo-formulario">Suscribite a nuestro NewsLetter</h2>
-        <form action="/new_contacto" method="POST">
+        <form action="/modify_contacto" method="POST">
+            <input type="hidden" name="id" value="{{contacto[0]}}">
             <div class="form-group">
                 <label for="txtNombre">Nombre:</label>
-                <input type="text" id="txtNombre" name="txtNombre" required>
+                <input type="text" id="txtNombre" name="txtNombre" value="{{contacto[1]}}" required>
             </div>
             <div class="form-group">
                 <label for="txtEmail">Correo electrónico:</label>
-                <input type="email" id="txtEmail" name="txtEmail" required>
+                <input type="email" id="txtEmail" name="txtEmail" value="{{contacto[2]}}" required>
             </div>
             <div class="form-group">
                 <label for="txtMensaje">Mensaje:</label>
-                <textarea id="txtMensaje" name="txtMensaje" rows="4" required></textarea>
+                <textarea id="txtMensaje" name="txtMensaje" rows="4" required>{{contacto[3]}}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
-            <a href="/listar_contacto">Administrar</a>
         </form>
         <br />
     </section>

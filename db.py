@@ -7,15 +7,11 @@ def conectarMySQL():
     # datos sensibles -> variables de entorno
     
     # local
-    # host="localhost"
-    # user="root"
-    # password="root"
-    # db="recetario"
+    host="localhost"
+    user="root"
+    password=""
+    db="test"
     
-    # deploy -> Pythonanywhere
-    host="maguti.mysql.pythonanywhere-services.com"
-    user="maguti"
-    password="codo2024"
-    db="maguti$recetario"
+   
 
     return pymysql.connect(host=host,user=user,password=password,database=db)

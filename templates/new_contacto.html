@@ -1,0 +1,37 @@
+{% include 'defaults/head.html' %}
+
+<body>
+
+    {% include 'defaults/header.html' %}
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Comentario</th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for contacto in contactos %}
+                <tr>
+                    <td>{{contacto[1]}}</td>
+                    <td>{{contacto[2]}}</td>
+                    <td>{{contacto[3]}}</td>
+                    <td><a href="/modificar/{{contacto[0]}}">Editar</a></td>
+                    <td><a href="/borrar_contacto/{{contacto[0]}}">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+{% include 'defaults/footer.html' %}

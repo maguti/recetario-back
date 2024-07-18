@@ -129,7 +129,7 @@ def newContacto(nombre, email, mensaje):
 def updContactoById(idcontacto, nombre, email, mensaje):
     conexion = conectarMySQL()
     with conexion.cursor() as cursor:
-        cursor.execute("UPDATE contactos SET nombre = %s, email = %s, mensaje = %s WHERE idreceta = %s",(nombre, email, mensaje, idcontacto))
+        cursor.execute("UPDATE contactos SET nombre = %s, email = %s, mensaje = %s WHERE idcontacto = %s",(nombre, email, mensaje, idcontacto))
         result = cursor
     conexion.commit()
     conexion.close()
